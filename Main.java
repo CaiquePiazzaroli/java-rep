@@ -5,39 +5,37 @@ public class Main {
         
         Scanner sc = new Scanner(System.in);
         
-        double[] cedulas = {100.00, 50.00, 20.00, 10.00, 5.00, 2.00};
-        int[] quantidadeDeCelulas = {0, 0, 0, 0, 0, 0}; 
-        
-        // 1, 0.50, 0.25, 0.10, 0.05 e 0.01
-        double[] moedas = {1.0, 0.50, 0.25, 0.10, 0.05, 0.01};
-        int[] quantidadeDeMoedas = {0, 0, 0, 0, 0, 0}; 
+        double[] cedulasEMoedasEmCentavos = {10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1};
+        int[] quantidadeDeCelulasEMoedas = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; 
         double valorEntrada;
+        int valorEntradaEmCentavos;
 
         valorEntrada = sc.nextDouble();
+        valorEntradaEmCentavos = (int) (valorEntrada * 100 + 0.5);
+
+
+        int index = 0;
+        while (index < cedulasEMoedasEmCentavos.length) {
+            if(valorEntradaEmCentavos >= cedulasEMoedasEmCentavos[index]) {
+                valorEntradaEmCentavos -= cedulasEMoedasEmCentavos[index];
+                quantidadeDeCelulasEMoedas[index]++;
+            } else {
+                index++;
+            }
+        }
         
-        for (int i = 0; i < cedulas.length; i++) {
-            if(valorEntrada >= cedulas[i]) {
-                quantidadeDeCelulas[i] = (int) (valorEntrada / cedulas[i]);
-                valorEntrada -= quantidadeDeCelulas[i] * cedulas[i];
+        for(int i = 0; i < cedulasEMoedasEmCentavos.length; i++) {
+            if(cedulasEMoedasEmCentavos[i] > 100) {
+                if(cedulasEMoedasEmCentavos[i] == 10000) {
+                    System.out.println("NOTAS:");
+                }
+                System.out.println(String.format("%d nota(s) de R$ %.2f", quantidadeDeCelulasEMoedas[i], cedulasEMoedasEmCentavos[i] / 100));
+            } else {
+                if(cedulasEMoedasEmCentavos[i] == 100) {
+                    System.out.println("MOEDAS:");
+                }
+                System.out.println(String.format("%d moeda(s) de R$ %.2f", quantidadeDeCelulasEMoedas[i], cedulasEMoedasEmCentavos[i] / 100));
             }
-        }
-
-
-        for (int i = 0; i < moedas.length; i++) {
-            if(valorEntrada >= moedas[i]) {
-                quantidadeDeMoedas[i] = (int) (valorEntrada / moedas[i]);
-                valorEntrada -= quantidadeDeMoedas[i] * moedas[i];
-            }
-        }
-
-        System.out.println("NOTAS:");
-        for(int i = 0; i < quantidadeDeCelulas.length; i++) {
-            System.out.println(String.format("%d nota(s) de R$ %.2f", quantidadeDeCelulas[i], cedulas[i]));
-        }
-
-        System.out.println("MOEDAS:");
-        for(int i = 0; i < quantidadeDeMoedas.length; i++) {
-            System.out.println(String.format("%d moeda(s) de R$ %.2f", quantidadeDeMoedas[i], moedas[i]));
         }
     }
 }
