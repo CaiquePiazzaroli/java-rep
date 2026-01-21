@@ -10,7 +10,7 @@ public class Main {
         } 
 
         if(numero >= 0.0000 && numero <= 25.0000) {
-            System.out.println("Intervalo [25,50]");
+            System.out.println("Intervalo [0,25]");
         }
 
         if(numero >= 25.0001 && numero <= 50.0000) {
