@@ -1,41 +1,28 @@
 import java.util.Scanner;
-// 1021 beecrowd
+
 public class Main {
     public static void main(String[] args) {
-        
         Scanner sc = new Scanner(System.in);
+        double numero = sc.nextDouble();
         
-        double[] cedulasEMoedasEmCentavos = {10000, 5000, 2000, 1000, 500, 200, 100, 50, 25, 10, 5, 1};
-        int[] quantidadeDeCelulasEMoedas = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}; 
-        double valorEntrada;
-        int valorEntradaEmCentavos;
+        if(numero < 0.0000 && numero > 100.0000) {
+            System.out.println("Fora do intervalo");
+        } 
 
-        valorEntrada = sc.nextDouble();
-        valorEntradaEmCentavos = (int) (valorEntrada * 100 + 0.5);
-
-
-        int index = 0;
-        while (index < cedulasEMoedasEmCentavos.length) {
-            if(valorEntradaEmCentavos >= cedulasEMoedasEmCentavos[index]) {
-                valorEntradaEmCentavos -= cedulasEMoedasEmCentavos[index];
-                quantidadeDeCelulasEMoedas[index]++;
-            } else {
-                index++;
-            }
+        if(numero >= 0.0000 && numero <= 25.0000) {
+            System.out.println("Intervalo [25,50]");
         }
-        
-        for(int i = 0; i < cedulasEMoedasEmCentavos.length; i++) {
-            if(cedulasEMoedasEmCentavos[i] > 100) {
-                if(cedulasEMoedasEmCentavos[i] == 10000) {
-                    System.out.println("NOTAS:");
-                }
-                System.out.println(String.format("%d nota(s) de R$ %.2f", quantidadeDeCelulasEMoedas[i], cedulasEMoedasEmCentavos[i] / 100));
-            } else {
-                if(cedulasEMoedasEmCentavos[i] == 100) {
-                    System.out.println("MOEDAS:");
-                }
-                System.out.println(String.format("%d moeda(s) de R$ %.2f", quantidadeDeCelulasEMoedas[i], cedulasEMoedasEmCentavos[i] / 100));
-            }
+
+        if(numero >= 25.0001 && numero <= 50.0000) {
+            System.out.println("Intervalo (25,50]");
+        }
+
+        if(numero >= 50.0001 && numero <= 75.0000) {
+            System.out.println("Intervalo (50,75]");
+        }
+
+        if(numero >= 75.0001 && numero <= 100.0000) {
+            System.out.println("Intervalo (75,100]");
         }
     }
 }
