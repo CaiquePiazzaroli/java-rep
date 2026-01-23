@@ -19,6 +19,6 @@ public class Aula1Classes {
     System.out.println(myObj2.x); // Imprimirá 77 pois o atributo x foi reescrito
 
     // Tetando reescrever um atributo constrante (Causa ERRO)
-    myObj2.nome = "Joao"; // The final field Aula1ClassesParteDois.nome cannot be assigned (ERRO)
+    // myObj2.nome = "Joao"; // The final field Aula1ClassesParteDois.nome cannot be assigned (ERRO)
   }
 }

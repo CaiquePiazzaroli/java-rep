@@ -1,3 +1,5 @@
+package Classes;
+
 class Vehicle {
 
     // Protected: para que a classe carro pudesse ser acessada

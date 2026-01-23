@@ -3,26 +3,43 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        double numero = sc.nextDouble();
-        
-        if(numero < 0.0000 && numero > 100.0000) {
-            System.out.println("Fora do intervalo");
-        } 
 
-        if(numero >= 0.0000 && numero <= 25.0000) {
-            System.out.println("Intervalo [0,25]");
+        int[] numerosEmOrdemDeEntrada = new int[3];
+        int[] numerosCrescentes = new int[3];
+        int posUm = 0, posDois = 1, posTres = 2, posTemporaria;
+
+        for(int i = 0; i < numerosEmOrdemDeEntrada.length; i++) {
+            numerosEmOrdemDeEntrada[i] = sc.nextInt();
+            numerosCrescentes[i] = numerosEmOrdemDeEntrada[i];
         }
 
-        if(numero >= 25.0001 && numero <= 50.0000) {
-            System.out.println("Intervalo (25,50]");
+        if(numerosCrescentes[posUm] > numerosCrescentes[posDois]) {
+            posTemporaria = numerosCrescentes[posDois];
+            numerosCrescentes[posDois] = numerosCrescentes[posUm];
+            numerosCrescentes[posUm] = posTemporaria;
         }
 
-        if(numero >= 50.0001 && numero <= 75.0000) {
-            System.out.println("Intervalo (50,75]");
+        if(numerosCrescentes[posDois] > numerosCrescentes[posTres]) {
+            posTemporaria = numerosCrescentes[posTres];
+            numerosCrescentes[posTres] = numerosCrescentes[posDois];
+            numerosCrescentes[posDois] = posTemporaria;
         }
 
-        if(numero >= 75.0001 && numero <= 100.0000) {
-            System.out.println("Intervalo (75,100]");
+        if(numerosCrescentes[posUm] > numerosCrescentes[posDois]) {
+            posTemporaria = numerosCrescentes[posDois];
+            numerosCrescentes[posDois] = numerosCrescentes[posUm];
+            numerosCrescentes[posUm] = posTemporaria;
         }
+
+        System.out.println(numerosCrescentes[posUm]);
+        System.out.println(numerosCrescentes[posDois]);
+        System.out.println(numerosCrescentes[posTres]);
+
+        System.out.println("");
+
+        System.out.println(numerosEmOrdemDeEntrada[posUm]);
+        System.out.println(numerosEmOrdemDeEntrada[posDois]);
+        System.out.println(numerosEmOrdemDeEntrada[posTres]);
+
     }
 }

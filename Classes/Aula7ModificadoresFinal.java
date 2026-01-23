@@ -12,6 +12,6 @@ class PlacaDeVideo {
 public class Aula7ModificadoresFinal {
     public static void main(String[] args) {
        PlacaDeVideo pv = new PlacaDeVideo(4096);
-       pv.nome = "Geforce GTX"; // Erro: The final field Aula1ClassesParteDois.nome cannot be assigned
+       // pv.nome = "Geforce GTX"; // Erro: The final field Aula1ClassesParteDois.nome cannot be assigned
     }
 }

@@ -1,4 +1,4 @@
-
+package Classes;
 class Animal {
     protected void SomAnimal() {
         System.out.println("Animal faz barulho");
