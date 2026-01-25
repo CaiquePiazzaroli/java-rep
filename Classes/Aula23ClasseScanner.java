@@ -3,7 +3,7 @@ package Classes;
 // Importando a classe Scanner
 import java.util.Scanner;
 
-public class Aula34ClasseScanner {
+public class Aula23ClasseScanner {
     public static void main(String[] args) {
 
         // Instancio o objeto Scanner
