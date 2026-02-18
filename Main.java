@@ -1,11 +1,22 @@
+import java.io.FileInputStream;
+
 public class Main {
     public static void main(String[] args) {
-        int value = 2;
-        while (value <= 100) {
-            if(value % 2 == 0) {
-                System.out.println(value);
+        try {
+            FileInputStream input = new FileInputStream("C:\\Users\\Caique\\Desktop\\ImagemItalia\\paralerEx.ods");
+            int leitura;
+            while (true) {
+                leitura = input.read();
+
+                if(leitura == -1){
+                    break;
+                }
+
+                System.out.print((char) leitura);
+
             }
-            value++;
+        } catch (Exception e) {
+            // TODO: handle exception
         }
     }
 }
