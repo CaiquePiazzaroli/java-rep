@@ -1,5 +1,5 @@
 package Sintaxe;
-public class Aula6PrintantoVariaveis {
+public class Aula6PrintandoVariaveis {
     public static void main(String[] args) {
         
         // Imprimindo String
