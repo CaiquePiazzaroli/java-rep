@@ -3,11 +3,11 @@ public class Aula5Variaveis {
     public static void main(String[] args) {
         //Criando uma variável: type NomeVariavel = Valor;
 
-        // Do tipo String
+        // String
         String jhon = "Jhon";
         System.out.println(jhon); //Jhon
 
-        // Do tipo inteiro 
+        // int
         int idade = 19;
         System.out.println(idade); //19
 
@@ -20,6 +20,7 @@ public class Aula5Variaveis {
         numeroDaSorte = 99;
         System.out.println(numeroDaSorte); //99
 
+        
 
         //Exemplificando erro de uma variável constante
         final int n1 = 15;
