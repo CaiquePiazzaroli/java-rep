@@ -21,10 +21,23 @@ public class Aula5Variaveis {
         System.out.println(numeroDaSorte); //99
 
         
-
         //Exemplificando erro de uma variável constante
         final int n1 = 15;
         System.out.println(n1); // 15
         // n1 = 20; //Erro
+
+        // Pode conter _ no nome
+        int _numero = 100;
+        System.out.println(_numero);
+
+        // Pode conter $ no nome
+        int $numero = 400;
+        System.out.println($numero);
+
+        // Nome inválido (nao podem começar com numeros)
+        // int 19Variavel = 100;
+
+        // Nome inválid (não podem usar palavras reservadas)
+        // int int = 10;
     }
 }

@@ -2,16 +2,10 @@ public class Main {
 
   public static void main(String[] args) {
     
-    int nota = 5;
+    Double n1 = 0.2;
+    Double n2 = 0.1;
 
-    nota++; // Incrementa 1 na variavel nota
-    System.out.println(nota); // 6
-
-    nota--; // Decrementa 1 na variavel nota 
-    System.out.println(nota); // 5
-    
-    System.out.println(nota++); // 5
-    System.out.println(++nota); // 6
+    System.out.println(n1 + n2);
 
   }
 }
