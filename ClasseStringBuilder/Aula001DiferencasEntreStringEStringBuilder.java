@@ -16,7 +16,7 @@ public class Aula001DiferencasEntreStringEStringBuilder {
         // Verificando o tempo de concatenacao utilizando StringBuilder 
         long tStartBuilder = System.currentTimeMillis();
         StringBuilder textoBuilder = new StringBuilder();
-        for(int i = 0; i < 100000; i++) {
+        for(int i = 0; i < 10; i++) {
             textoBuilder.append("-x");
         }
         long tEndBuilder = System.currentTimeMillis();
