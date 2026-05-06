@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 import java.math.MathContext;
 import java.math.RoundingMode;
 
-public class Adula09MetodoSubtract {
+public class Aula009MetodoSubtract {
     public static void main(String[] args) {
         
         BigDecimal resultado = BigDecimal.ZERO;
