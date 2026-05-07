@@ -20,6 +20,7 @@ public class Aula003ClasseFileReader {
                     conteudo.append( (char) fr.read());
                 }
             }
+            
             String contedutoFinal = conteudo.toString();
             System.out.println(contedutoFinal);
         } catch (IOException e) {
