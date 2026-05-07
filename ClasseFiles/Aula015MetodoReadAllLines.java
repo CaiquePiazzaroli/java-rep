@@ -5,7 +5,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class Aula15MetodoReadAllLines {
+public class Aula015MetodoReadAllLines {
     public static void main(String[] args) {
         
         Path caminho = Paths.get("C:\\ClasseFiles\\meuArquivo.txt");
