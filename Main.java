@@ -1,38 +1,51 @@
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.net.URI;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 public class Main {
     public static void main(String[] args) {
         
-        Path diretorio = Paths.get("c:", "revisao", "criacaoDeArquivos");
-
-
-        //System.out.println(System.getProperty("java.io.tmpdir"));
-
+        // Transferindo arquivos da pasta x para pasta y no sistema de arquivos
+        Path arquivoOrigem = Paths.get("C:", "revisao", "pasta1", "arquivo.txt");
+        Path arquivoDestino = Paths.get("C:", "revisao", "pasta2", "arquivo.txt");
         try {
-            // CreateDirectory
-            // Cria um direório dentro de um sistema de arquivos 
-            // Ex -> a pasta revisao ja existe, createDirectory ira criar apenas a pasta criaçãoDeArquivos
-            if(!Files.exists(diretorio)) Files.createDirectory(diretorio); 
+            Path resultado = Files.copy(arquivoOrigem, arquivoDestino, StandardCopyOption.REPLACE_EXISTING);
+            System.out.println(resultado);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
 
-            // CreateDirectories
-            // Cria as pastas recursivamente dentro de um sistema de arquivos
-            Path diretorioRecursivo = Paths.get("c:","diretorioRecursivo", "metodosDeCriacao", "criandoDir");
+        // Copiando de um InputStream (na web)
+        Path arquivoDestinoInputStream = Paths.get("C:", "revisao", "pasta2", "imagem.png");
+        try {
+            URI uri = new URI("https://cataas.com/cat");
 
-            // Cria C:\diretorioRecursivo\metodosDeCriacao\criandoDir
-            Path caminhoRecursivoCriado = Files.createDirectories(diretorioRecursivo);
-
-            // createFile: Cria arquivos]
-            Path criado = Files.createFile(diretorio.resolve("meuNovoArquivo.txt"));
-            System.out.println(criado);
-
-
-        } catch (IOException e) {
+            try(InputStream in =  uri.toURL().openStream()) {
+                Files.copy(in, arquivoDestinoInputStream, StandardCopyOption.REPLACE_EXISTING);
+                System.out.println("Conteúdo salvo em: " + arquivoDestinoInputStream);
+            }
+        } catch (Exception e) {
             System.out.println(e);
         }
 
+        // Copiando arquivo para outro com outputStream
+        Path arquivoOrigemOutPutStream = Paths.get("C:", "revisao", "pasta2", "imagem.png");
+        try {
+            try(OutputStream out = new FileOutputStream("C:\\revisao\\pasta1\\imagem1.png")) {
+                long bytesCopiados = Files.copy(arquivoOrigemOutPutStream, out);
+                System.out.println(bytesCopiados);
+            }
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
     }
 }
