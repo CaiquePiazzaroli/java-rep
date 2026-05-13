@@ -1,13 +1,31 @@
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.stream.Stream;
+import java.io.IOException;
+import java.nio.file.Files;
+
 public class Main {
     public static void main(String[] args) {
         
-        
-        double[] meusNumeros = new double[10];
-        for(double n : meusNumeros) {
-            System.out.println(n);
+        // C:\revisao\pasta1
+        Path diretorio = Paths.get("C:","revisao", "pasta1");
+        if (!Files.exists(diretorio)) {
+            try {
+                Files.createDirectories(diretorio);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
-        System.out.println(meusNumeros.length); // 10   
-    }
 
+        try {
+            Path arquivo = diretorio.resolve("EscrevendoComInputStream.txt");
+            try(Stream<String> linhas = Files.lines(arquivo)) {
+                linhas.forEach(System.out::println);
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        
+    }
 }
