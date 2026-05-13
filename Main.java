@@ -7,9 +7,9 @@ import java.nio.file.Files;
 
 public class Main {
     public static void main(String[] args) {
-        
+
         // C:\revisao\pasta1
-        Path diretorio = Paths.get("C:","revisao");
+        Path diretorio = Paths.get("C:", "revisao", "pasta1");
         if (!Files.exists(diretorio)) {
             try {
                 Files.createDirectories(diretorio);
@@ -19,12 +19,12 @@ public class Main {
         }
 
         try {
-            try(Stream<Path> caminhos = Files.list(diretorio)) {
-                caminhos.forEach(System.out::println); // pasta1 e pasta2
+            try (Stream<Path> caminhos = Files.find(diretorio, 1, (path, atributos) -> path.toString().endsWith("txt"))) {
+                caminhos.forEach(System.out::println); // printar todos os arquivos e diretório de pastas e subpastas
             }
         } catch (Exception e) {
             System.out.println(e);
         }
-        
+
     }
 }
