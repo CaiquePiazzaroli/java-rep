@@ -3,7 +3,11 @@ public class Main {
     public static void main(String[] args) {
         
         
-        System.out.println(System.lineSeparator());
+        double[] meusNumeros = new double[10];
+        for(double n : meusNumeros) {
+            System.out.println(n);
+        }
+        System.out.println(meusNumeros.length); // 10   
     }
 
 }
