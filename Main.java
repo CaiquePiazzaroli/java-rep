@@ -1,30 +1,26 @@
-
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.stream.Stream;
-import java.io.IOException;
-import java.nio.file.Files;
 
 public class Main {
     public static void main(String[] args) {
 
-        // C:\revisao\pasta1
-        Path diretorio = Paths.get("C:", "revisao", "pasta1");
-        if (!Files.exists(diretorio)) {
-            try {
-                Files.createDirectories(diretorio);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+        Path arquivo = Paths.get("C:","revisao", "pasta1", "EscrevendoComInputStream.txt");
+
+
+        System.out.println(Files.isReadable(arquivo)); // true
+        System.out.println(Files.isWritable(arquivo)); // true
+        System.out.println(Files.isExecutable(arquivo)); // true
 
         try {
-            try (Stream<Path> caminhos = Files.find(diretorio, 1, (path, atributos) -> path.toString().endsWith("txt"))) {
-                caminhos.forEach(System.out::println); // printar todos os arquivos e diretório de pastas e subpastas
-            }
+            System.out.println(Files.getLastModifiedTime(arquivo)); // 2026-05-12T17:50:00.9607495Z
+            System.out.println(Files.size(arquivo)); // Retorna o tamanho do arquivo em bytes
         } catch (Exception e) {
-            System.out.println(e);
+
         }
+
+        
+        
 
     }
 }
