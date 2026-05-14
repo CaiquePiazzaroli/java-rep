@@ -1,47 +1,18 @@
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class Main {
     public static void main(String[] args) {
         
-        final int MAX = 200000;
+        Aluno a1 = new Aluno("Caique", 10);
+        Aluno b2 = new Aluno("Caique", 10);
+        Aluno c3 = new Aluno("Caique", 10);
 
-        //Teste de velocidade ArrayList
-        
-        
-        List<Integer> listaArrayList = new ArrayList<Integer>();
-        
-        //ArrayList é mais lento para inserção e remoção: 4s
-        for (int i = 0; i < MAX; i++) {
-            listaArrayList.add(i);
-        }
-        
-        // ArrayList é mais rapido para acessar elementos: 1s
-        long tInicioArrayList = System.currentTimeMillis();
-        for (int i = 0; i < listaArrayList.size(); i++) {
-            listaArrayList.get(i);
-        }
-        long tFimArrayList = System.currentTimeMillis();
-        
-        System.out.println("Tempo total: " + (tFimArrayList - tInicioArrayList)); // Resultado 74
+        Set<Aluno> alunos = new HashSet<Aluno>();
+        alunos.add(a1);
+        alunos.add(b2);
+        alunos.add(c3);
 
-
-        // Teste de velocidade ArrayList
-        List<Integer> listaLinkedList = new LinkedList<Integer>();
-        
-        // LinkedList é mais rapido para inserção e remoção tempo: 3s
-        for (int i = 0; i < MAX; i++) {
-            listaLinkedList.add(i);
-        }
-        
-        long tInicioLinkedList = System.currentTimeMillis();
-        for (int i = 0; i < listaLinkedList.size(); i++) {
-            listaLinkedList.get(i);
-        }
-        long tFimLinkedList = System.currentTimeMillis();
-        
-        System.out.println("Tempo total: " + (tFimLinkedList - tInicioLinkedList)); // Resultado 280
-
+        System.out.println(alunos); // [Caique, Caique, Caique]
     }
 }
