@@ -1,11 +1,13 @@
-public class Aluno {
+public class Aluno implements Comparable<Aluno>{
     private String nome;
     private double nota;
+    private MeuEnum mesEntrada;
 
 
-    Aluno(String nome, double nota) {
+    Aluno(String nome, double nota, MeuEnum mesEntrada) {
         this.nome = nome;
         this.nota = nota;
+        this.mesEntrada = mesEntrada;
     }
     
     public String getNome() {
@@ -14,6 +16,10 @@ public class Aluno {
 
     public double getNota() {
         return nota;
+    }
+
+    public MeuEnum getMesEntrada() {
+        return mesEntrada;
     }
 
     @Override
@@ -32,7 +38,11 @@ public class Aluno {
 
     @Override
     public String toString() {
-        // TODO Auto-generated method stub
-        return this.nome;
+        return this.nome + " " + this.mesEntrada.getNumeroMes();
+    }
+
+    @Override
+    public int compareTo(Aluno o) {
+        return this.mesEntrada.getNumeroMes().compareTo(o.getMesEntrada().getNumeroMes());
     }
 }

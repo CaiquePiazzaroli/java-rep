@@ -5,13 +5,13 @@ public enum MeuEnum {
     ABRIL(4),
     MAIO(5); // As constantes do enum
 
-    private int numeroMes;
+    private Integer numeroMes;
 
-    private MeuEnum(int numeroMes) {
+    private MeuEnum(Integer numeroMes) {
         this.numeroMes = numeroMes;
     }
 
-    public int getNumeroMes() {
+    public Integer getNumeroMes() {
         return numeroMes;
     } 
 }
