@@ -3,6 +3,8 @@ import java.util.PriorityQueue;
 public class Main {
     public static void main(String[] args) {
 
+
+        // Ordanando uma Fila por meio de um enum
         PriorityQueue <Aluno> alunos = new PriorityQueue<>();
         alunos.add(new Aluno("Felipe Alves", 10.0 , MeuEnum.ABRIL));
         alunos.add(new Aluno("Marcelo", 10.0 , MeuEnum.JANEIRO));
