@@ -8,7 +8,7 @@ public class Main {
         double novoValor1 = valor1;
         System.out.println(novoValor1);
 
-        // Narrowing  (narrow - estreito) cast ou cast explícito: Quando converte-se um tipo maior em um tipo menor
+        // Narrowing  (narrow - estreito) cast ou cast explícito: Quando converte-se um tipo maior em um tipo menor a
         float novoValor2 = (float) valor2;
         System.out.println(novoValor2);
         
