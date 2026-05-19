@@ -1,89 +1,121 @@
+import java.util.Arrays;
+import java.util.List;
+
 public class Main {
+
+    // esc. global
+    static int meuNumero = 40;
+
+
     public static void main(String[] args) {
 
-        // Operadores Aritiméticos
-        // + - / * %
-        System.out.println(4 + 2); // 6
-        System.out.println(5 - 3); // 2
-        System.out.println(17 / 3); // 5 (promoção binária numérica => todos sao inteiros => inteiro)
-        System.out.println(5 * 4); // 20
-        System.out.println(19 %  5); // 4 (resto da divisao)
+        String nome = "caique";
+        String outroNome = new String("caique");
 
-        // Ordem de precendencia, Promoção binaria numérica e cast
-        double n1 = 3 / 10; // => 3 / 10 (inteiro) 0 => 0.0 (convertido e armazenado na var)
-        System.out.println(n1); // 0.0
-        double n2 = (double) 3 / 10; // => 3 (convertido para 3.0) / 10 => 0.3 (promoção binária numérica)
-        System.out.println(n2); // 0.3
-        double n3 = (double) (3 / 10); // ordem de precedencia (3/10 => 0) => (conversao) 0 => 0.0 (armazenado)
-        System.out.println(n3); // 0.0
+        System.out.println(nome==outroNome); //false
 
-        // Concatenação de strings
-        // 1+1+1+"1";
-        System.out.println(1 + 1 + 1 + "1" ); // Soma os 3 primeiros 1 e depois concatena o ultimo => 31
-        //1+"1"+1+1; 
-        System.out.println(1 + "1" + 1 + 1 ); // A partir do segundo 1 ele começa a concatenar => 1111
-        // 1+"1"+1+"1";
-        System.out.println(1 + "1" + 1 + "1" ); // A partir do segundo 1 ele começa a concatenar => 1111
-        //"1"+1+1+1;
-        System.out.println("1" + 1 + 1 + 1); // Concatena dede o primeiro elemento => 1111
-        //"1"+(1+1+1);
-        System.out.println("1" + (1 + 1 + 1)); // Ex os parenteses (1 + 1 + 1) = 3 concatena com o numero um => "1" + 3 => 13
+        // equals
+        System.out.println(nome.equals(outroNome));
 
 
-        // Operadores de comparação
-        // == (igual), != (diferente), > (maior que), < (menor que), >= (maior ou igual), <= (menor ou igual)
-        System.out.println(5 == 5); // true
-        System.out.println(5 != 5); // false
-        System.out.println(5 > 5); // false
-        System.out.println(6 < 5); // false
-        System.out.println(6 <= 5); // false
-        System.out.println(6 >= 5); // true
+        Object obj = 123;
+        String texto = String.valueOf(obj);
+        System.out.println(texto);
 
 
-        // Operadores lógicos
-        System.out.println(2 > 4 || 7 > 3); // Retorna true se um ou outra expressão for veraddeira > true
-        System.out.println(2 > 4 && 7 > 3); // Retorna true ambas expressoes forem veraddeiras > false
-        System.out.println(!(2 > 4)); // Inverte o valor lógico > true
+        // Metodos String
 
-        // Operadores de atribuição
-        // =, +=, -=, /=, *=, %=
-        int numero = 10;
-        numero += 4; // => numero = numero + 4
-        System.out.println(numero); // 14
-        numero -= 4; // => numero = numero - 4
-        System.out.println(numero); // 14 - 4 => 10
-        numero *= 4; // => numero = numero * 4
-        System.out.println(numero); // 14 * 4 => 40
-        numero /= 4; // => numero = numero / 4
-        System.out.println(numero); // 40 / 4 => 10
-        numero %= 4; // => numero = numero * 4
-        System.out.println(numero); // 10 % 4 => 2
+        // Contains:  verifica se uma string contém uma determinada sequência de caracteres.
+        // Sem sobrecarga
+        String email = "usuario@email.com";
+        if (email.contains("@")) {
+            System.out.println("E-mail válido!");
+        }
+        if (email.contains("")) {
+            System.out.println("Contem vazio");
+        }
+        // if (email.contains(null)) {
+        //     System.out.println("Exceção por CharSequence ser null");
+        // }
 
-        // Operadores unários
-        // ++ e -- => incrementam e decrementam valores
-        int numero2 = 40;
-        numero2++;
-        System.out.println(numero2); // 41
-        numero2--;
-        System.out.println(numero2); // 40
+        //endsWith verifica se um arquivo termina com sufixo
+        // sem sobrecarga 
+        String arquivo = "relatorio_final.pdf";
+        System.out.println(arquivo.endsWith(".pdf"));
 
-        System.out.println(numero2++); // 40
-        System.out.println(numero2); // 41
+        String url = "https://www.site.com.br";
+        if (url.endsWith(".br")) {
+            System.out.println("Site brasileiro!");
+        }
 
-        System.out.println(--numero2); // 40
-        System.out.println(numero2); // 40
+        // equals: equals(Object obj) da classe String compara o conteúdo de duas strings 
+        // sem sobrecarga
+        System.out.println("brasil".equals("brasil")); // true
 
-        // Operador ternário
-        // (cond) ? se true : se false => atribui valor a uma variavel dinamicamente
-        int idade = 32;
-        String apto = (idade > 18) ? "Pode passar" : "nao pode passar";
-        System.out.println(apto); // Pode passar
+        // equalsIgnoreCase: equalsIgnoreCase(String obj) da classe String compara o conteúdo de duas strings 
+        // sem sobrecarga
+        System.out.println("brasil".equalsIgnoreCase("Brasil")); // true
 
+        // isEmpty x isBlank
+        String vazia = "";
+        String espacos = "   ";
+        String texto2 = "Java";
+
+        System.out.println(vazia.isEmpty());    // true
+        System.out.println(espacos.isEmpty());  // false
+        System.out.println(texto2.isEmpty());    // false
+
+        System.out.println(vazia.isBlank());    // true
+        System.out.println(espacos.isBlank());  // true
+        System.out.println(texto2.isBlank());    // false
+
+        nome = "";
+        if (nome.isBlank()) {
+            System.out.println("O campo nome não pode estar em branco!");
+        }
+
+        String resposta = "";
+        if (resposta.isEmpty()) {
+            System.out.println("Nenhuma resposta foi fornecida.");
+        }
+
+        // Join 
+        // join(CharSequence delimiter, CharSequence... elements)
+        // join(CharSequence delimiter, Iterable<? extends CharSequence> elements)
+        String resultado = String.join(", ", "Java", "Python", "C++");
+        System.out.println(resultado); // "Java, Python, C++"
+
+        List<String> linguagens = Arrays.asList("Java", "Python", "C++");
+        resultado = String.join(", ", linguagens);
+        System.out.println(resultado); // "Java, Python, C+
+
+        String caminho = String.join("/", "usuarios", "42", "perfil");
+        System.out.println(caminho);
+
+        // lenght
+        // sem sobrecarga
+        System.out.println("Minha string".length());
         
+        String senha = "abc123";
+        if (senha.length() < 8) {
+            System.out.println("Senha muito curta — mínimo 8 caracteres.");
+        }
 
+        // Replace -> String substitui todas as ocorrências 
+        // replace(char oldChar, char newChar)
+        // replace(CharSequence target, CharSequence replacement)
+        String texto1 = "banana";
+        String resultado2 = texto1.replace('a', 'o');
+        System.out.println(resultado2);
+
+        String frase = "Eu gosto de Java";
+        String resultado3 = frase.replace("Java", "Kotlin");
+        System.out.println(resultado3);
+
+        String preco = "R$ 1.000,00";
+        String numeros = preco.replace("R$ ", "")
+                            .replace(".", "")
+                            .replace(",", ".");
+        System.out.println(numeros);
     }
-}
-
-class MinhaClasse {
-    public int numero;
 }
