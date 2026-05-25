@@ -57,10 +57,5 @@ public class Main {
             }
         }
 
-        // Comparando arrays
-        int[] arrayComparativo1 = new int[] {1,2,3};
-        int[] arrayComparativo2 = new int[] {1,2,3};
-        System.out.println(arrayComparativo1.equals(arrayComparativo2)); // False
-
     }
 }
