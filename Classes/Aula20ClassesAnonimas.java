@@ -13,7 +13,7 @@ interface VeiculoAula20ClassesAnonimas {
 
 public class Aula20ClassesAnonimas {
     public static void main(String[] args) {
-        // Criando uma classes anonima
+        // Criando uma classes anonima 
         AnimalAula20ClassesAnonimas animalMarciano = new AnimalAula20ClassesAnonimas() {
             public void makeSound() {
                 System.out.println("Em marte, animais fazer um barulho estranho....");
