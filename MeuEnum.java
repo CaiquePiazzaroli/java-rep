@@ -10,7 +10,7 @@ public enum MeuEnum {
     private MeuEnum(Integer numeroMes) {
         this.numeroMes = numeroMes;
     }
-
+    // 
     public Integer getNumeroMes() {
         return numeroMes;
     } 
