@@ -1,4 +1,4 @@
-package Erros;
+package Excecoes;
 
 public class Aula03MultiplosCatchs {
     public static void main(String[] args) {

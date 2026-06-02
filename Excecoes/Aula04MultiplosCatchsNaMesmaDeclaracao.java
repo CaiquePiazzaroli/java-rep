@@ -1,4 +1,4 @@
-package Erros;
+package Excecoes;
 
 public class Aula04MultiplosCatchsNaMesmaDeclaracao {
     public static void main(String[] args) {

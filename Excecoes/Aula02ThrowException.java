@@ -1,4 +1,4 @@
-package Erros;
+package Excecoes;
 
 public class Aula02ThrowException {
     static void verificarIdade(int idade) {

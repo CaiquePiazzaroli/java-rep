@@ -1,4 +1,4 @@
-package Erros;
+package Excecoes;
 
 public class Aula01TryCatch {
     public static void main(String[] args) {
