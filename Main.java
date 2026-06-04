@@ -2,73 +2,60 @@ import java.util.ArrayDeque;
 import java.util.ArrayList;
 import java.util.Deque;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Set;
 import java.util.Stack;
+import java.util.TreeSet;
 import java.util.Vector;
 
 public class Main {
 
     public static void main(String[] args) {
         
-        // Listas
-        List<Integer> lista = new ArrayList<>();
-        lista.add(20);
-        lista.add(30);
-        lista.add(40);
-        lista.add(50);
-        lista.add(60);
+        // Conjuntos
 
-        for(Integer e: lista) {
+        // 1. Sem ordem 
+        Set<String> conjuntoSet = new HashSet<>();
+        conjuntoSet.add("caique");
+        conjuntoSet.add("joao");
+        conjuntoSet.add("maria");
+        conjuntoSet.add("amanda");
+        conjuntoSet.add("caique"); // Conjuntos nao permitem elementos duplicados
+
+        for(String e: conjuntoSet) {
             System.out.println(e);
         }
-        System.out.println("----");
 
-        List<Integer> listaLinkada = new LinkedList<>();
-        listaLinkada.add(110);
-        listaLinkada.add(120);
-        listaLinkada.add(130);
-        listaLinkada.add(140);
-        listaLinkada.add(150);
-        listaLinkada.add(160);
+        System.out.println("------");
 
-        for(Integer e: listaLinkada) {
+        // 2. Por ordem de inserção 
+        Set<String> conjuntoLinked = new LinkedHashSet<>();
+        conjuntoLinked.add("caique");
+        conjuntoLinked.add("joao");
+        conjuntoLinked.add("maria");
+        conjuntoLinked.add("amanda");
+
+        for(String e: conjuntoLinked) {
             System.out.println(e);
         }
-        System.out.println("----");
 
-        // Fila
-        Queue<Integer> fila = new LinkedList<>();
-        fila.add(210);
-        fila.add(220);
-        fila.add(230);
-        fila.add(240);
-        fila.add(250);
-        fila.add(260);
+        System.out.println("------");
 
-        System.out.println(fila.peek()); //210
-        System.out.println(fila);
-        System.out.println(fila.poll()); //210 and remove 210
-        System.out.println(fila);
+        // 3. Por ordem natural (alfabetica)
+        Set<String> conjuntoAlfabetico = new TreeSet<>();
+        conjuntoAlfabetico.add("caique");
+        conjuntoAlfabetico.add("joao");
+        conjuntoAlfabetico.add("maria");
+        conjuntoAlfabetico.add("amanda");
 
-        // Pilha
-        Deque<Integer> pilha = new ArrayDeque<>();
-        pilha.add(1001);
-        pilha.add(1002);
-        pilha.add(1003);
-        pilha.add(1004);
-        pilha.add(1005);
+        for(String e: conjuntoAlfabetico) {
+            System.out.println(e);
+        }
 
-        System.out.println(pilha.getLast()); // 1005
-        System.out.println(pilha);
-
-        System.out.println(pilha.getFirst()); // 1001
-        System.out.println(pilha);
-
-        System.out.println(pilha.removeLast()); // 1005 remove it
-        System.out.println(pilha);
+        System.out.println("------");
 
         
     }    
