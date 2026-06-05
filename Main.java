@@ -1,64 +1,31 @@
-import java.util.ArrayDeque;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.LinkedHashMap;
-import java.util.LinkedHashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Queue;
-import java.util.Set;
-import java.util.Stack;
-import java.util.TreeMap;
-import java.util.TreeSet;
-import java.util.Vector;
-
-import java.util.Map;
 
 public class Main {
 
     public static void main(String[] args) {
+
         
-        // Mapas
+        // ArrayList => Array Que expande seu tamanho -> Melhor para leitura
+        List<Integer> numeros = new ArrayList<>();
+        numeros.add(10); // Adicionar um elemento
+        numeros.get(1); // Recuperar um elemento
+        numeros.set(2,99); // Substituir um elemento
+        numeros.remove(0); // Remover um elemento
+        numeros.size(); // Retorna o tamanho do array
 
-        // 1. Sem garantia de ordem
-        Map<String, String> mapaSemOrdem = new HashMap<>();
-        mapaSemOrdem.put("caique", "mendes");
-        mapaSemOrdem.put("joao", "pereira");
-        mapaSemOrdem.put("maria", "do carmo");
 
-        for(String e: mapaSemOrdem.keySet()) {
-            System.out.println(e + " - " + mapaSemOrdem.get(e));
-        }
+        // LinkedList => Containers que possuem um valor e apontam para o proximo elemento -> Melhor para inserção e remoçao
+        List<Integer> numerosLinkados = new LinkedList<>();
+        numerosLinkados.add(10); // Adicionar um elemento
+        numerosLinkados.get(1); // Recuperar um elemento
+        numerosLinkados.set(2,99); // Substituir um elemento
+        numerosLinkados.remove(0); // Remover um elemento
+        numerosLinkados.size(); // Retorna o tamanho do array
 
-        System.out.println("---------------");
 
-        // 2. Sem garantia de ordem
-        Map<String, String> mapaOrdemInsercao = new LinkedHashMap<>();
-        mapaOrdemInsercao.put("caique", "mendes");
-        mapaOrdemInsercao.put("joao", "pereira");
-        mapaOrdemInsercao.put("maria", "do carmo");
-
-        for(String e: mapaOrdemInsercao.keySet()) {
-            System.out.println(e + " - " + mapaOrdemInsercao.get(e));
-        }
-
-        System.out.println("---------------");
-
-        // 3. Por ordem natural
-        Map<String, String> mapaOrdenadoNaturalmente = new TreeMap<>();
-        mapaOrdenadoNaturalmente.put("caique", "mendes");
-        mapaOrdenadoNaturalmente.put("joao", "pereira");
-        mapaOrdenadoNaturalmente.put("maria", "do carmo");
-
-        for(String e: mapaOrdenadoNaturalmente.keySet()) {
-            System.out.println(e + " - " + mapaOrdenadoNaturalmente.get(e));
-        }
-    
-    
-        
-    }    
+    }
   
       
 }
