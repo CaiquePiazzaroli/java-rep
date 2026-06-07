@@ -1,31 +1,46 @@
-import java.util.ArrayList;
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.List;
+import java.util.PriorityQueue;
+import java.util.Queue;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        
-        // ArrayList => Array Que expande seu tamanho -> Melhor para leitura
-        List<Integer> numeros = new ArrayList<>();
-        numeros.add(10); // Adicionar um elemento
-        numeros.get(1); // Recuperar um elemento
-        numeros.set(2,99); // Substituir um elemento
-        numeros.remove(0); // Remover um elemento
-        numeros.size(); // Retorna o tamanho do array
+        // Fila
+        Queue<Integer> fila = new LinkedList<>();
+        fila.offer(Integer.valueOf(10));
+        fila.offer(Integer.valueOf(30));
+        System.out.println(fila.peek()); // Observa o primeiro
+        System.out.println(fila.poll()); // Observa e remove
+        System.out.println(fila);
 
+        Queue<Integer> filaPrioritaria = new PriorityQueue<>(); // Prioridade definida pelo compareTo do comparable
+        filaPrioritaria.offer(40);
+        filaPrioritaria.offer(30);
+        filaPrioritaria.offer(754);
+        System.out.println(filaPrioritaria);
 
-        // LinkedList => Containers que possuem um valor e apontam para o proximo elemento -> Melhor para inserção e remoçao
-        List<Integer> numerosLinkados = new LinkedList<>();
-        numerosLinkados.add(10); // Adicionar um elemento
-        numerosLinkados.get(1); // Recuperar um elemento
-        numerosLinkados.set(2,99); // Substituir um elemento
-        numerosLinkados.remove(0); // Remover um elemento
-        numerosLinkados.size(); // Retorna o tamanho do array
+        // Pilha
+        // Criando uma pilha de Strings usando LinkedList (LIFO)
+        Deque<String> livros = new LinkedList<>();
 
+        // Empilhando (Push)
+        livros.push("Senhor dos aneis");
+        livros.push("A guerra dos tronos");
+        livros.push("Duna");
+        livros.push("Hobbit");
+        //                                                   (Topo)                               (Fundo)
+        System.out.println("Pilha inicial: " + livros); // [Hobbit, Duna, A guerra dos tronos, Senhor dos aneis]
 
+        // Espiando o topo (Peek)
+        System.out.println("Topo da pilha: " + livros.peek()); // Saída: Hobbit
+
+        // Desempilhando (Pop)
+        System.out.println("Removido: " + livros.pop()); // Desempilha Hobbit
+        System.out.println("Novo topo: " + livros.peek()); // Duna
+
+        System.out.println("Pilha Final: " + livros); // [Duna, A guerra dos tronos, Senhor dos aneis]
     }
-  
-      
+
 }
