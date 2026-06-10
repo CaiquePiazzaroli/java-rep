@@ -1,6 +1,9 @@
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.LinkedHashMap;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -62,47 +65,45 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // Map -> Chave e Valor
-        // HashMap -> Sem ordem
-        Map<String, Integer> veiculos = new HashMap<>();
-    
-        // Adiciona
-        veiculos.put("ford", 2006);
-        veiculos.put("corsa", 2001);
-        veiculos.put("hyundai", 2010);
+        List<String> names = new ArrayList<>();
+        names.add("Chris Redfield");
+        names.add("Harry Potter");
+        names.add("James Sunderland");
+        names.add("Clarie Redfield");
+        names.add("Harry Potter");
+        names.add("James Sunderland");
+        names.add("Harry Potter");
+        names.add("James Sunderland");
+
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(5);
+        numbers.add(1);
+        numbers.add(7);
+        numbers.add(3);
+        numbers.add(9);
+
+        System.out.println("Max: " + Collections.max(numbers));
+        System.out.println("Min: " + Collections.min(numbers));
+
+        Collections.swap(names, 0, 7); // Troca elementos
+        Collections.sort(names); // Ordena por ordem natural ou pela implementação do compareTo
+        Collections.binarySearch(names, "James Sunderland"); // faz uma busca do elemento por busca binaria
+        Collections.shuffle(names); // Bagunça a lista
+        Collections.frequency(names, "Harry Potter"); // Retorna quantas vezes um determinado elemento aparece
+
+        // Iteracoes
+        for(String c: names) {
+            System.out.println(c);
+        }
+
+        Iterator<String> it = names.iterator();
+        while (it.hasNext()) {
+            System.out.println(it.next());
+        }
+
+
         
-        // Resgata
-        veiculos.get("corsa");
-        
-        // Remove
-        veiculos.remove("ford");
-
-        // Verifica se existe a chave
-        veiculos.containsKey("hyundai");
-
-        // Retorna as chaves
-        veiculos.keySet();
-
-        // Retorna os valores
-        veiculos.values();
-
-        System.out.println(veiculos);
-
-        // TreeMap -> Ordenado pelas chaves
-        Map<String, Integer> veiculosOrdenados = new TreeMap<>();
-        veiculosOrdenados.put("ford", 2006); // 2
-        veiculosOrdenados.put("corsa", 2001); // 1 
-        veiculosOrdenados.put("hyundai", 2010); // 3
-
-        System.out.println(veiculosOrdenados);
-
-        // LinkedHashMap -> Por ordem de inserção
-        Map<String, Integer> ordemInsercao = new LinkedHashMap<>();
-        ordemInsercao.put("ford", 2006);
-        ordemInsercao.put("corsa", 2001); 
-        ordemInsercao.put("hyundai", 2010); 
-
-        System.out.println(ordemInsercao);
+       
     }
 
 }
