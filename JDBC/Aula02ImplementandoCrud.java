@@ -5,6 +5,7 @@ import java.util.List;
 
 public class Aula02ImplementandoCrud {
 
+    // Usando JDBC
     public void save(Profissao profissao) {
         try {
             String sql = "INSERT INTO tab_profissao (codigo, nome) VALUES (?,?)";
