@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-class CarroComparable implements Comparable {
+class CarroComparable implements Comparable<CarroComparable> {
     private int ano;
 
     CarroComparable(int ano) {
@@ -16,7 +16,7 @@ class CarroComparable implements Comparable {
     }
 
     @Override
-    public int compareTo(Object o) {
+    public int compareTo(CarroComparable o) {
         // -1 ou 1 ou 0
         // Carros mais novos devem vir na frente 
         CarroComparable outroCarro = (CarroComparable) o;
