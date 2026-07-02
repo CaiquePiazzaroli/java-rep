@@ -18,7 +18,7 @@ public class Main {
         // sort - Ordenacao por ordem natural (ou Comparable)
         Collections.sort(names);
         System.out.println("Ordenado alfabeticamente: " + names);
-        
+         
         // reverse
         Collections.reverse(names);
         System.out.println("Realizando inversao: " + names);
